@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <processors/transformer.h>
 
 
 void setup() {
@@ -10,6 +11,6 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
  float raw_input=analogRead(A0) * (5.0/1023);
-
+ float processed_signal = OffSetTransformer::transform(raw_input);
 
 }
